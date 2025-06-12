@@ -5,7 +5,7 @@ if (empty($_SESSION['username_kopisop'])) {
     exit;
   }
 ?>
-<style>
+<!-- <style>
         .menu-container {
             display: flex;
             flex-wrap: wrap;
@@ -21,7 +21,7 @@ if (empty($_SESSION['username_kopisop'])) {
             height: 150px;
             object-fit: cover;
         }
-    </style>
+    </style> -->
 <div class="col-lg-9 mt-2">
     <h1>Daftar Menu</h1>
     <a href="tambah_menu.php">➕ Tambah Menu Baru</a>

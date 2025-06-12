@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3e5ab;
+    /* krem kopi */
+}
+
+.form-container {
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+}
+
+.card {
+    background-color: #fffaf0;
+    /* beige light */
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.brand-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #6f4e37;
+    /* warna kopi */
+}
+
+.form-control:focus {
+    border-color: #6f4e37;
+    box-shadow: 0 0 0 0.2rem rgba(111, 78, 55, 0.25);
+}
+
+.btn-coffee {
+    background-color: #6f4e37;
+    color: white;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-coffee:hover {
+    background-color: #f5ba44;
+}
+
+.form-check-input:checked {
+    background-color: #6f4e37;
+    border-color: #6f4e37;
+}
+
+footer small {
+    font-size: 0.9rem;
+}

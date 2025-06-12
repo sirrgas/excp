@@ -7,85 +7,66 @@ if (!empty($_SESSION['username_kopisop'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="auto">
-
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Astro v5.7.10">
-    <title>KopiSop</title>
+    <title>☕ Kopian. | Login</title>
+    <!-- <title> | Ngopi disini Ajaa </title> -->
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
-    <script src="../assets/js/color-modes.js"></script>
+    <!-- Bootstrap & Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
-        crossorigin="anonymous">
-
-    <link rel="stylesheet" href="assets/css/login.css">
 </head>
+<body class="d-flex align-items-center justify-content-center min-vh-100">
 
-<body class="d-flex align-items-center py-4 bg-body-tertiary">
-
-    <main class="form-signin w-100 m-auto">
-        <form class="needs-validation" novalidate action="proses/proses_login.php" method="POST">
-            <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="Bootstrap Logo" width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Please Log in</h1>
-
-            <div class="form-floating mb-3">
-                <input name="username" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-                <label for="floatingInput">Email address</label>
-                <div class="invalid-feedback">
-                    Masukan Email Yang Valid
+    <div class="form-container">
+        <div class="card p-4 p-md-5">
+            <div class="text-center mb-4">
+                <div class="brand-title">☕ KopiSop</div>
+                <small class="text-muted">Selamat datang! Silakan login dulu ya~</small>
+            </div>
+            <form class="needs-validation" novalidate action="proses/proses_login.php" method="POST">
+                <div class="form-floating mb-3">
+                    <input name="username" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                    <label for="floatingInput">Email address</label>
+                    <div class="invalid-feedback">Masukkan email yang valid</div>
                 </div>
-            </div>
-
-            <div class="form-floating mb-3">
-                <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
-                <label for="floatingPassword">Password</label>
-                <div class="invalid-feedback">
-                    Masukan Password Yang Benar
+                <div class="form-floating mb-3">
+                    <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                    <label for="floatingPassword">Password</label>
+                    <div class="invalid-feedback">Masukkan password yang benar</div>
                 </div>
-            </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="remember-me" id="checkDefault">
+                    <label class="form-check-label" for="checkDefault">Ingat saya</label>
+                </div>
+                <button class="btn btn-coffee w-100 py-2" type="submit" name="kirim" value="123">Masuk</button>
+            </form>
+            <footer class="mt-4 text-center">
+                <small class="text-muted">&copy; <span id="year"></span> KopiSop Café</small>
+            </footer>
+        </div>
+    </div>
 
-            <div class="form-check text-start mb-3">
-                <input class="form-check-input" type="checkbox" value="remember-me" id="checkDefault">
-                <label class="form-check-label" for="checkDefault">Remember me</label>
-            </div>
-
-            <button class="btn btn-primary w-100 py-2" type="submit" name="kirim" value="123">Log in</button>
-
-            <p class="mt-5 mb-3 text-center text-body-secondary">
-                &copy; <span id="year"></span>
-            </p>
-        </form>
-    </main>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         (() => {
-            'use strict'
-
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            const forms = document.querySelectorAll('.needs-validation')
-
-            // Loop over them and prevent submission
+            'use strict';
+            const forms = document.querySelectorAll('.needs-validation');
             Array.from(forms).forEach(form => {
                 form.addEventListener('submit', event => {
                     if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
+                        event.preventDefault();
+                        event.stopPropagation();
                     }
-
-                    form.classList.add('was-validated')
-                }, false)
-            })
-        })()
-    </script>
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Set current year automatically
-        document.getElementById('year').textContent = new Date().getFullYear();
+                    form.classList.add('was-validated');
+                }, false);
+            });
+            document.getElementById('year').textContent = new Date().getFullYear();
+        })();
     </script>
 </body>
-
 </html>

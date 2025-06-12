@@ -12,6 +12,8 @@ if (!empty($_POST['kirim'])) {
         if ($hasil) {
             $_SESSION['username_kopisop'] = $username;
             $_SESSION['level_kopisop'] = $hasil['level'];
+            // header("Location: ../home");
+            // header("Location: ../dashboard.php");
             header("Location: ../home"); // arahkan ke home/dashboard jika sudah login
             exit;
         }

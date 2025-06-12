@@ -1,5 +1,5 @@
 <?php
-// session_start();
+
 if (empty($_SESSION['username_kopisop'])) {
     header('Location: login');
     exit;
@@ -8,11 +8,7 @@ if (empty($_SESSION['username_kopisop'])) {
 include "proses/connect.php";
 $query = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$_SESSION[username_kopisop]'");
 $hasil = mysqli_fetch_array($query);
-
-
-
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -20,7 +16,7 @@ $hasil = mysqli_fetch_array($query);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kopi SOP</title>
+    <title>Kopian. | Ngopi disini Ajaa </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
 
